@@ -1,5 +1,5 @@
 var fs = require('fs');
-var log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'w'});
+var log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'a'});
 
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
