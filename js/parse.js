@@ -62,7 +62,8 @@ function csvJSON(csv){
           label: param_key,
           lineTension: 0,
           bezierCurve: false,
-          fill: true,
+          fill: false,
+          spanGaps: true,
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
           data: param_vs_time
@@ -88,7 +89,7 @@ function csvJSON(csv){
                 beginAtZero: true,
                 steps: 10,
                 stepValue: 5,
-                max: 800
+                max: 1000
             }
         }]
           },
