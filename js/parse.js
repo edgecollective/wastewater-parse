@@ -66,6 +66,7 @@ function csvJSON(csv){
           data: {
           datasets: [{
           label: "Northern",
+          pointRadius: 3,
           lineTension: 0,
           bezierCurve: false,
           fill: false,
@@ -76,6 +77,7 @@ function csvJSON(csv){
           },
           {
             label: "Southern",
+            pointRadius: 3,
             lineTension: 0,
             bezierCurve: false,
             fill: false,
