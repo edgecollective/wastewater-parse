@@ -133,7 +133,7 @@ fetch('waste.csv')
       /*for(var i = 0; i < 10; i++) {
           console.log(jsonfile[i]);
       }*/
-      var max_y = 15000;
+      var max_y = 17000;
       var min_timestamp = 18000;
       var chart_style = 'line';
       makeChart('chart',jsonfile,chart_style,min_timestamp,max_y);
