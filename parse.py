@@ -30,7 +30,9 @@ else:
     df = df[1:]
     df.columns = ['Date','Southern','Northern','Southern_7','Northern_7','Southern_low','Southern_high','Northern_low','Northern_high','Southern_variant','Northern_variant']
     #print(df.tail)
-
+    print(df.Date) 
+    unixtime=pd.to_datetime(df.Date).astype(int) / 10**9
+    df.insert(0, "timestamp", unixtime, True)
     #dates = df['Date'].to_list()
     #northern = df['Northern'].to_list()
     #southern = df['Southern'].to_list()

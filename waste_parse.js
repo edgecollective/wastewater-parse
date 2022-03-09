@@ -24,4 +24,4 @@ async function lsWithGrep() {
 };
 
 //lsWithGrep();
-setInterval(lsWithGrep,1000*60*60*1); // every hour
+setInterval(lsWithGrep,1000*60*60*4); // every 4 hours
