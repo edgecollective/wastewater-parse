@@ -29,8 +29,15 @@ else:
     df = pd.concat(frames)
     df = df[1:]
     df.columns = ['Date','Southern','Northern','Southern_7','Northern_7','Southern_low','Southern_high','Northern_low','Northern_high','Southern_variant','Northern_variant']
-    #print(df.tail)
-    print(df.Date) 
+    # drop last nonsense rows
+    dates=df['Date'].to_numpy()
+    index=len(dates)
+    for i in range(0,len(dates)):
+        #print(dates[i])
+        if len(dates[i])>20:
+            index=i
+            break
+    df=df.head(index)
     unixtime=pd.to_datetime(df.Date).astype(int) / 10**9
     df.insert(0, "timestamp", unixtime, True)
     #dates = df['Date'].to_list()
