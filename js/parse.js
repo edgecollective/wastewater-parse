@@ -149,7 +149,7 @@ fetch('waste.csv')
       makeChart('chart_zoom_1',jsonfile,chart_style,min_timestamp,max_y);
 
       max_y = 1000
-      var tail = 3600*24*30; // 60 days worth of seconds
+      var tail = 3600*24*60; // 60 days worth of seconds
       var time_now = Date.now()/1000;
       //var threshold = time_now - tail;
       min_timestamp = time_now - tail;
