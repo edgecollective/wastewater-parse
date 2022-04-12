@@ -139,9 +139,8 @@ fetch('waste.csv')
       var min_timestamp = 18000;
       var chart_style = 'line';
       makeChart('chart',jsonfile,chart_style,min_timestamp,max_y);
-      max_y = 1000;
-
       
+      max_y = 3000;
       var tail = 3600*24*1000; // 300 days worth of seconds
       var time_now = Date.now()/1000;
       //var threshold = time_now - tail;
