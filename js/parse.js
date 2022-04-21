@@ -37,6 +37,9 @@ function csvJSON(csv){
  
       var north_vs_time = [];
       var south_vs_time = [];
+      var apr_2020_vs_time = [];
+      var jan_2021_vs_time = [];
+
       //var param_vs_time = [];
               for(var i = 0; i < bdata.length; i++) {
                 //for(var i = 0; i < 100; i++) {
@@ -56,15 +59,28 @@ function csvJSON(csv){
                     //param_vs_time.push({"t":localtime,"y":thisco2})
                     north_vs_time.push({"t":localtime,"y":north});
                     south_vs_time.push({"t":localtime,"y":south});
+
+
+                    apr_2020_vs_time.push({"t":localtime,"y":784});
+
+                    jan_2021_vs_time.push({"t":localtime,"y":1250});
+
                     }
               }
       
       //console.log(param_vs_time);
-  
+              
+      //aug2020_data = Array.apply(null, new Array(north_vs_time.length)).map(Number.prototype.valueOf,120 );
+
+      //console.log(north_vs_time);
+      //jan_2021_vs_time
+      //console.log(aug2020_data);
       var chart = new Chart(ctx, {
           type: chart_style,
           data: {
-          datasets: [{
+          datasets: [
+            
+            {
           label: "Northern",
           pointRadius: 0,
           lineTension: 0,
@@ -85,6 +101,36 @@ function csvJSON(csv){
             backgroundColor: 'rgb(0, 99, 132)',
             borderColor: 'rgb(0, 99, 132)',
             data: south_vs_time
+            },
+            {
+              label:"April 2020",
+              data: apr_2020_vs_time,
+              fill: false,
+              pointRadius: 0,
+              lineTension: 0,
+              bezierCurve: false,
+              fill: false,
+              spanGaps: true,
+              radius:0,
+              backgroundColor: 'rgb(0, 255, 0,0.2)',
+              borderColor: 'rgb(0, 255, 0,0.2)'
+              //radius: 0,
+              //backgroundColor: "rgba(0,0,0,0.1)"
+            },
+            {
+              label:"Jan 2021",
+              data: jan_2021_vs_time,
+              fill: false,
+              pointRadius: 0,
+              lineTension: 0,
+              bezierCurve: false,
+              fill: false,
+              spanGaps: true,
+              radius:0,
+              backgroundColor: 'rgb(0, 0, 0,0.2)',
+              borderColor: 'rgb(0, 0, 0,0.2)'
+              //radius: 0,
+              //backgroundColor: "rgba(0,0,0,0.1)"
             }
         ]
           },
@@ -147,7 +193,7 @@ fetch('waste.csv')
       min_timestamp = time_now - tail;
       makeChart('chart_zoom_1',jsonfile,chart_style,min_timestamp,max_y);
 
-      max_y = 1000
+      max_y = 1600
       var tail = 3600*24*60; // 60 days worth of seconds
       var time_now = Date.now()/1000;
       //var threshold = time_now - tail;
