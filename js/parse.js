@@ -200,6 +200,14 @@ fetch('waste.csv')
       min_timestamp = time_now - tail;
       makeChart('chart_zoom_2',jsonfile,chart_style,min_timestamp,max_y);
 
+
+      max_y = 2000
+      var tail = 3600*24*200; // 60 days worth of seconds
+      var time_now = Date.now()/1000;
+      //var threshold = time_now - tail;
+      min_timestamp = time_now - tail;
+      makeChart('chart_zoom_3',jsonfile,chart_style,min_timestamp,max_y);
+
       //var timestamp_now = luxon.DateTime.now().seconds.toLocal().toString();
   })
 
