@@ -8,6 +8,8 @@ data_url = ''
 reqs = requests.get(url)
 soup = BeautifulSoup(reqs.text, 'html.parser')
 
+data_suffix=''
+
 urls = []
 for link in soup.find_all('a'):
     #print('trick')
@@ -16,7 +18,11 @@ for link in soup.find_all('a'):
         #print(link.get('href'))
         if (this_link.find('-data') != -1):
             #print("got it!")
-            data_url='https://www.mwra.com/biobot/'+this_link
+            data_suffix=this_link 
+
+data_url='https://www.mwra.com'+data_suffix
+print("data_suffix=",data_suffix)
+print("data_url=",data_url)
 
 if len(data_url)==0:
     print('no data url found')
